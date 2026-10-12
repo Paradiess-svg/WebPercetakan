@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cetak Bogor — Percetakan Custom, Gratis Ongkir se-Kota Bogor</title>
+<meta name="description" content="Cetak banner dan packaging dengan ukuran bebas. Coba desainmu langsung dalam 3D. Gratis ongkir se-Kota Bogor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17151f; --paper:#faf8f3; --card:#ffffff; --line:#e7e2d6; --muted:#6b6676;
+    --m:#e6007e; --c:#0096d6; --y:#ffc400;
+    --radius:14px;
+    --font:"Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+  button{font:inherit;cursor:pointer}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:20;background:rgba(250,248,243,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;text-decoration:none}
+  .dots{display:flex;gap:3px}
+  .dots i{width:9px;height:9px;border-radius:50%;display:block}
+  .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-weight:500;font-size:14.5px}
+  .nav ul a{text-decoration:none;color:var(--muted)}
+  .nav ul a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:11px 20px;font-weight:700;font-size:14.5px;border:1.5px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;transition:transform .15s, background .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.wa{background:#1fa855;border-color:#1fa855}
+  @media (max-width:820px){ .nav ul{display:none} }
+
+  /* ---------- Hero ---------- */
+  .hero{padding-block:64px 40px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+  .eyebrow b{color:var(--m)}
+  h1{font-size:clamp(34px,5.2vw,58px);line-height:1.05;letter-spacing:-.03em;margin:18px 0 16px;font-weight:800}
+  h1 em{font-style:normal;background:linear-gradient(transparent 62%, rgba(255,196,0,.55) 62%)}
+  .lead{font-size:18px;color:var(--muted);max-width:540px;margin:0 0 28px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-art{position:relative;aspect-ratio:1;max-width:420px;justify-self:center;width:100%}
+  .hero-art .sheet{position:absolute;border-radius:10px;box-shadow:0 18px 40px rgba(23,21,31,.12)}
+  .hero-art .s1{inset:8% 22% 30% 4%;background:var(--c);transform:rotate(-8deg)}
+  .hero-art .s2{inset:20% 6% 20% 26%;background:var(--m);transform:rotate(6deg)}
+  .hero-art .s3{inset:38% 28% 4% 14%;background:var(--y);transform:rotate(-2deg);display:grid;place-items:center;font-weight:800;font-size:clamp(18px,2.4vw,26px);color:var(--ink);text-align:center;line-height:1.15;padding:12px}
+  .hero-art .tag{position:absolute;right:0;top:4%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,.06)}
+  @media (max-width:880px){ .hero{grid-template-columns:1fr;padding-top:40px} .hero-art{max-width:300px} }
+
+  /* ---------- USP ---------- */
+  .usp{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-block:8px 64px}
+  .usp article{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .usp .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;margin-bottom:14px}
+  .usp h3{margin:0 0 6px;font-size:18px}
+  .usp p{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:820px){ .usp{grid-template-columns:1fr} }
+
+  /* ---------- Section ---------- */
+  section.block{padding-block:64px;border-top:1px solid var(--line)}
+  .sec-head{max-width:640px;margin-bottom:28px}
+  .sec-head h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.02em;line-height:1.15;margin:0 0 10px}
+  .sec-head p{margin:0;color:var(--muted);font-size:16.5px}
+  .kicker{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--m);margin-bottom:10px;display:block}
+
+  /* ---------- Studio ---------- */
+  .studio{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start}
+  @media (max-width:960px){ .studio{grid-template-columns:1fr} }
+  .viewer{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(120% 90% at 50% 20%,#ffffff 0%,#f1ede4 70%,#e9e3d6 100%);height:clamp(380px,66vh,640px)}
+  @media (min-width:961px){ .viewer{position:sticky;top:84px} }
+  #view{position:absolute;inset:0}
+  #view canvas{width:100%!important;height:100%!important;display:block;touch-action:none;cursor:grab}
+  #view canvas:active{cursor:grabbing}
+  .v-top{position:absolute;left:14px;right:14px;top:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;pointer-events:none}
+  .v-top > *{pointer-events:auto}
+  .chip{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+  .chip input{accent-color:var(--m);margin:0}
+  .toggles{display:flex;gap:8px;flex-wrap:wrap}
+  .info{position:absolute;left:14px;bottom:14px;right:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap;pointer-events:none}
+  .info .size{background:var(--ink);color:#fff;border-radius:12px;padding:10px 14px;font-weight:700;font-size:15px;line-height:1.3}
+  .info .size small{display:block;font-weight:500;opacity:.7;font-size:12.5px}
+  .info .hint{font-size:12.5px;color:var(--muted);background:rgba(255,255,255,.8);padding:5px 10px;border-radius:8px}
+  .nogl{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .tabs{display:grid;grid-template-columns:1fr 1fr;background:#f3efe6;border-radius:12px;padding:4px;margin-bottom:18px}
+  .tabs button{border:0;background:transparent;padding:10px;border-radius:9px;font-weight:700;color:var(--muted)}
+  .tabs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .panel h4{margin:18px 0 10px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .panel h4:first-of-type{margin-top:0}
+  .presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .presets button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;font-size:12.5px;font-weight:600}
+  .presets button:hover{border-color:var(--ink)}
+  .dim{display:grid;grid-template-columns:96px 1fr 92px;gap:10px;align-items:center;margin-bottom:10px}
+  .dim label{font-size:14px;font-weight:600}
+  .dim input[type=range]{width:100%;accent-color:var(--m)}
+  .num{display:flex;align-items:center;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff}
+  .num input{width:100%;border:0;padding:8px 4px 8px 10px;font:inherit;font-weight:700;font-size:14px;outline:none;min-width:0}
+  .num span{font-size:12px;color:var(--muted);padding-right:9px}
+  .num:focus-within{border-color:var(--c)}
+  select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:14.5px;background:#fff}
+  .bdesc{font-size:13px;color:var(--muted);margin:6px 2px 0}
+  .check{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:14px;font-weight:500}
+  .check input{accent-color:var(--m);width:16px;height:16px}
+
+  .faces{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
+  .faces button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 4px;font-size:12.5px;font-weight:600;position:relative}
+  .faces button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .faces button.has::after{content:"";position:absolute;top:4px;right:4px;width:6px;height:6px;border-radius:50%;background:var(--m)}
+  .drop{display:block;border:1.5px dashed #cfc7b5;border-radius:12px;padding:18px;text-align:center;cursor:pointer;background:#fcfbf8;transition:.15s}
+  .drop:hover,.drop.over{border-color:var(--m);background:#fff5fa}
+  .drop strong{display:block;font-size:14.5px}
+  .drop span{font-size:12.5px;color:var(--muted)}
+  .drop input{display:none}
+  .seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+  .seg button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px;font-size:12.5px;font-weight:600}
+  .seg button.on{border-color:var(--m);color:var(--m);background:#fff5fa}
+  .dlist{list-style:none;margin:10px 0 0;padding:0;font-size:13px}
+  .dlist li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed var(--line)}
+  .dlist li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .dlist button{border:0;background:none;color:var(--m);font-size:12.5px;font-weight:700;padding:2px 4px;flex-shrink:0}
+  .actions{display:grid;gap:8px;margin-top:20px}
+  .actions .btn{width:100%}
+  .note{font-size:12.5px;color:var(--muted);margin:10px 0 0;text-align:center}
+
+  /* ---------- Bahan ---------- */
+  .mat-group h3{font-size:17px;margin:0 0 12px}
+  .mats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:28px}
+  .mat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;gap:14px;align-items:flex-start}
+  .sw{width:44px;height:44px;border-radius:10px;flex-shrink:0;border:1px solid rgba(0,0,0,.08)}
+  .mat b{display:block;font-size:15px}
+  .mat span{font-size:13.5px;color:var(--muted)}
+
+  /* ---------- Steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+  .steps li{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;counter-increment:s}
+  .steps li::before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;margin-bottom:12px}
+  .steps b{display:block;margin-bottom:4px}
+  .steps span{color:var(--muted);font-size:14.5px}
+  .steps{padding:0;margin:0}
+  @media (max-width:900px){ .steps{grid-template-columns:1fr 1fr} }
+  @media (max-width:520px){ .steps{grid-template-columns:1fr} }
+
+  /* ---------- Area ---------- */
+  .area{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:var(--ink);color:#fff;border-radius:22px;padding:clamp(24px,4vw,44px)}
+  .area h2{margin:0 0 10px;font-size:clamp(24px,3.2vw,36px);letter-spacing:-.02em;line-height:1.15}
+  .area p{color:rgba(255,255,255,.72);margin:0 0 20px}
+  .kec{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .kec div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;font-weight:600;display:flex;gap:10px;align-items:center}
+  .kec div::before{content:"✓";color:var(--y);font-weight:800}
+  @media (max-width:820px){ .area{grid-template-columns:1fr} }
+
+  footer{padding-block:40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:64px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:50;max-width:calc(100% - 32px);text-align:center}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="dots"><i style="background:var(--c)"></i><i style="background:var(--m)"></i><i style="background:var(--y)"></i><i style="background:var(--ink)"></i></span>
+      Cetak Bogor
+    </a>
+    <ul>
+      <li><a href="#studio">Studio 3D</a></li>
+      <li><a href="#bahan">Bahan</a></li>
+      <li><a href="#cara">Cara Order</a></li>
+      <li><a href="#area">Area Antar</a></li>
+    </ul>
+    <a class="btn" href="#studio">Mulai Desain</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">🚚 <b>Gratis ongkir</b> ke seluruh Kota Bogor</span>
+      <h1>Cetak sesuai <em>ukuranmu</em>, lihat hasilnya dulu dalam 3D.</h1>
+      <p class="lead">Banner dan packaging dengan ukuran bebas sampai hitungan sentimeter, bahan yang beragam, dan pratinjau 3D dari desainmu sendiri sebelum dicetak.</p>
+      <div class="cta">
+        <a class="btn" href="#studio">Coba Studio 3D →</a>
+        <a class="btn ghost" href="#bahan">Lihat pilihan bahan</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="sheet s1"></div>
+      <div class="sheet s2"></div>
+      <div class="sheet s3">Ukuran bebas,<br>per cm.</div>
+      <div class="tag">📦 20 × 15 × 10 cm</div>
+    </div>
+  </div>
+
+  <div class="wrap usp">
+    <article>
+      <div class="ic" style="background:#e5f5fc">🚚</div>
+      <h3>Gratis ongkir se-Kota Bogor</h3>
+      <p>Pesanan diantar langsung ke alamatmu di 6 kecamatan Kota Bogor tanpa biaya kirim.</p>
+    </article>
+    <article>
+      <div class="ic" style="background:#fde6f2">📐</div>
+      <h3>Kustomisasi sebebasnya</h3>
+      <p>Tentukan panjang, lebar, dan tinggi sendiri. Cocok untuk packaging produk yang ukurannya tidak standar.</p>
+    </article>
+    <article>
+      <div class="ic" style="background:#fff5d1">🧻</div>
+      <h3>Bahan beragam</h3>
+      <p>Flexi, albatros, luster, ivory, duplex, kraft, sampai corrugated. Pilih yang paling pas untuk kebutuhanmu.</p>
+    </article>
+  </div>
+
+  <!-- ================= STUDIO 3D ================= -->
+  <section class="block" id="studio">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Studio 3D</span>
+        <h2>Atur ukuran, unggah desain, putar &amp; lihat hasilnya.</h2>
+        <p>Pilih banner atau packaging, masukkan ukurannya, lalu unggah desainmu. Model 3D langsung menyesuaikan.</p>
+      </div>
+
+      <div class="studio">
+        <div class="viewer">
+          <div id="view"></div>
+          <div class="v-top">
+            <div class="toggles">
+              <label class="chip"><input type="checkbox" id="autoRot" checked> Putar otomatis</label>
+              <label class="chip"><input type="checkbox" id="refToggle" checked> <span id="refLabel">Pembanding orang 165 cm</span></label>
+            </div>
+            <button class="chip" id="resetView" type="button">↺ Reset tampilan</button>
+          </div>
+          <div class="info">
+            <div class="size" id="sizeInfo">–</div>
+            <div class="hint">Geser untuk memutar · scroll/cubit untuk zoom</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="tabs" role="tablist">
+            <button type="button" data-mode="banner" class="on" role="tab">🪧 Banner</button>
+            <button type="button" data-mode="box" role="tab">📦 Packaging</button>
+          </div>
+
+          <!-- Banner controls -->
+          <div id="ctlBanner">
+            <h4>Ukuran</h4>
+            <div class="presets">
+              <button type="button" data-p="300" data-l="100">Spanduk 300×100</button>
+              <button type="button" data-p="60" data-l="160">X-Banner 60×160</button>
+              <button type="button" data-p="85" data-l="200">Roll Banner 85×200</button>
+              <button type="button" data-p="300" data-l="200">Backdrop 300×200</button>
+            </div>
+            <div id="dimsBanner"></div>
+            <h4>Bahan</h4>
+            <select id="bahanBanner"></select>
+            <p class="bdesc" id="descBanner"></p>
+            <label class="check"><input type="checkbox" id="grommet" checked> Finishing mata ayam</label>
+          </div>
+
+          <!-- Box controls -->
+          <div id="ctlBox" hidden>
+            <h4>Ukuran</h4>
+            <div class="presets">
+              <button type="button" data-p="20" data-l="20" data-t="10">Box kue 20×20×10</button>
+              <button type="button" data-p="32" data-l="20" data-t="12">Box sepatu 32×20×12</button>
+              <button type="button" data-p="25" data-l="18" data-t="6">Mailer 25×18×6</button>
+              <button type="button" data-p="6" data-l="6" data-t="15">Box kosmetik 6×6×15</button>
+            </div>
+            <div id="dimsBox"></div>
+            <h4>Bahan</h4>
+            <select id="bahanBox"></select>
+            <p class="bdesc" id="descBox"></p>
+          </div>
+
+          <h4>Desain</h4>
+          <div class="faces" id="faces" hidden>
+            <button type="button" data-face="all" class="on">Semua</button>
+            <button type="button" data-face="depan">Depan</button>
+            <button type="button" data-face="belakang">Belakang</button>
+            <button type="button" data-face="atas">Atas</button>
+            <button type="button" data-face="bawah">Bawah</button>
+            <button type="button" data-face="kiri">Kiri</button>
+            <button type="button" data-face="kanan">Kanan</button>
+          </div>
+          <label class="drop" id="drop">
+            <input type="file" id="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
+            <strong id="dropTitle">Unggah desain banner</strong>
+            <span>Tarik file ke sini atau klik · PNG, JPG, WEBP, SVG</span>
+          </label>
+          <div class="seg" id="fitSeg">
+            <button type="button" data-fit="cover" class="on" title="Desain memenuhi bidang, bagian lebih dipotong">Penuh</button>
+            <button type="button" data-fit="contain" title="Seluruh desain terlihat, sisa bidang polos">Muat</button>
+            <button type="button" data-fit="stretch" title="Desain ditarik mengikuti bidang">Regang</button>
+          </div>
+          <ul class="dlist" id="dlist"></ul>
+
+          <div class="actions">
+            <button type="button" class="btn wa" id="orderBtn">Pesan via WhatsApp</button>
+            <button type="button" class="btn ghost" id="shotBtn">Unduh gambar pratinjau</button>
+          </div>
+          <p class="note">Pratinjau bersifat ilustrasi. Warna cetak final bisa sedikit berbeda dari layar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BAHAN ================= -->
+  <section class="block" id="bahan">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Pilihan Bahan</span>
+        <h2>Bahan yang tepat untuk tiap kebutuhan.</h2>
+        <p>Bingung pilih yang mana? Ceritakan produkmu dan tim kami bantu merekomendasikan.</p>
+      </div>
+      <div class="mat-group"><h3>🪧 Banner</h3><div class="mats" id="matsBanner"></div></div>
+      <div class="mat-group"><h3>📦 Packaging</h3><div class="mats" id="matsBox"></div></div>
+    </div>
+  </section>
+
+  <!-- ================= CARA ORDER ================= -->
+  <section class="block" id="cara">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Cara Order</span>
+        <h2>Empat langkah, langsung sampai ke depan pintu.</h2>
+      </div>
+      <ol class="steps">
+        <li><b>Atur ukuran &amp; bahan</b><span>Masukkan ukuran yang kamu butuhkan di Studio 3D.</span></li>
+        <li><b>Unggah desain</b><span>Cek tampilannya dari segala sisi sebelum dicetak.</span></li>
+        <li><b>Kirim via WhatsApp</b><span>Detail pesanan otomatis terisi. Kirim file desain aslinya di chat.</span></li>
+        <li><b>Dicetak &amp; diantar</b><span>Gratis ongkir untuk alamat di Kota Bogor.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= AREA ================= -->
+  <section class="block" id="area">
+    <div class="wrap">
+      <div class="area">
+        <div>
+          <h2>Gratis ongkir ke seluruh Kota Bogor.</h2>
+          <p>Berlaku untuk semua pesanan dengan alamat pengiriman di 6 kecamatan Kota Bogor. Di luar Kota Bogor? Tetap bisa dikirim, ongkir menyesuaikan.</p>
+          <a class="btn" style="background:var(--y);border-color:var(--y);color:var(--ink)" href="#studio">Mulai pesan</a>
+        </div>
+        <div class="kec">
+          <div>Bogor Utara</div><div>Bogor Selatan</div>
+          <div>Bogor Timur</div><div>Bogor Barat</div>
+          <div>Bogor Tengah</div><div>Tanah Sareal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:var(--ink)">Cetak Bogor</b><br>Jl. Contoh No. 1, Kota Bogor<br>Senin–Sabtu, 08.00–17.00</div>
+    <div>WhatsApp: 0812-3456-7890<br>© 2026 Cetak Bogor</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+/* ====== Ganti dengan nomor WhatsApp percetakan (format 62...) ====== */
+const WA_NUMBER = '6281234567890';
+
+const BAHAN = {
+  banner: [
+    { id:'flexi280', nama:'Flexi China 280gr', warna:'#f3f2ee', rough:.85, desc:'Ekonomis, untuk spanduk outdoor & event.' },
+    { id:'flexi340', nama:'Flexi Korea 340gr', warna:'#f7f7f4', rough:.7,  desc:'Lebih tebal, warna lebih tajam, tahan lama.' },
+    { id:'albatros', nama:'Albatros',          warna:'#fbfbfa', rough:.5,  desc:'Untuk indoor, permukaan halus, cetak detail tajam.' },
+    { id:'luster',   nama:'Luster',            warna:'#ffffff', rough:.28, desc:'Efek semi-glossy, cocok untuk roll banner.' }
+  ],
+  box: [
+    { id:'ivory',      nama:'Ivory 310gr',          warna:'#fbfaf4', rough:.7,  desc:'Putih bersih, untuk box makanan & kosmetik.' },
+    { id:'duplex',     nama:'Duplex 350gr',         warna:'#f1f0ea', rough:.8,  desc:'Ekonomis, sisi dalam berwarna abu-abu.' },
+    { id:'artcarton',  nama:'Art Carton 260gr',     warna:'#ffffff', rough:.35, desc:'Permukaan licin, warna cetak cerah.' },
+    { id:'kraft',      nama:'Kraft Coklat',         warna:'#b98a5b', rough:.9,  desc:'Tampilan natural dan eco-friendly.', serat:true },
+    { id:'corrugated', nama:'Corrugated (Kardus)',  warna:'#c39a6b', rough:.95, desc:'Kokoh, untuk pengiriman dan box besar.', serat:true }
+  ]
+};
+const getBahan = (mode, id) => BAHAN[mode].find(b => b.id === id);
+
+// Urutan sisi mengikuti urutan material BoxGeometry: +x, -x, +y, -y, +z, -z
+const FACES = [['kanan','Kanan'],['kiri','Kiri'],['atas','Atas'],['bawah','Bawah'],['depan','Depan'],['belakang','Belakang']];
+const FACE_DIR = { kanan:[1,.3,.2], kiri:[-1,.3,.2], atas:[.15,1,.4], bawah:[.15,-1,.4], depan:[.2,.3,1], belakang:[.2,.3,-1] };
+
+const state = {
+  mode:'banner',
+  banner:{ p:300, l:100, bahan:'flexi280', grommet:true },
+  box:{ p:20, l:15, t:10, bahan:'ivory' },
+  fit:'cover',
+  face:'all',
+  bannerImg:null,   // {img, name}
+  boxImgs:{},       // sisi -> {img, name}
+  ref:true
+};
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const fmt = n => n.toLocaleString('id-ID', { maximumFractionDigits:2 });
+
+function toast(msg){
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ---------------- Daftar bahan (section) ---------------- */
+for (const mode of ['banner','box']) {
+  const sel = mode === 'banner' ? $('#bahanBanner') : $('#bahanBox');
+  const grid = mode === 'banner' ? $('#matsBanner') : $('#matsBox');
+  BAHAN[mode].forEach(b => {
+    sel.add(new Option(b.nama, b.id));
+    const card = document.createElement('div'); card.className = 'mat';
+    card.innerHTML = `<div class="sw" style="background:${b.warna}${b.serat ? ';background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 5px)' : ''}"></div><div><b>${b.nama}</b><span>${b.desc}</span></div>`;
+    grid.appendChild(card);
+  });
+}
+
+/* ---------------- 3D ---------------- */
+const view = $('#view');
+let renderer, scene, camera, controls, product = null, tween = null;
+const glOK = typeof THREE !== 'undefined' && THREE.OrbitControls && (() => {
+  try { const c = document.createElement('canvas'); return !!(c.getContext('webgl') || c.getContext('experimental-webgl')); } catch(e){ return false; }
+})();
+
+if (!glOK) {
+  view.innerHTML = '<div class="nogl">Pratinjau 3D butuh koneksi internet (untuk memuat Three.js) dan browser yang mendukung WebGL.</div>';
+} else {
+  renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true, preserveDrawingBuffer:true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  view.appendChild(renderer.domElement);
+
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(35, 1, 0.01, 100);
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = .08;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 1.2;
+  controls.minDistance = .5;
+  controls.maxDistance = 20;
+  controls.addEventListener('start', () => { controls.autoRotate = false; $('#autoRot').checked = false; tween = null; });
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xd8d2c4, .8));
+  const sun = new THREE.DirectionalLight(0xffffff, .7);
+  sun.position.set(3, 6, 4);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048);
+  Object.assign(sun.shadow.camera, { left:-5, right:5, top:5, bottom:-5, near:.5, far:20 });
+  sun.shadow.radius = 4;
+  scene.add(sun);
+  const fill = new THREE.DirectionalLight(0xffffff, .35);
+  fill.position.set(-4, 2, -3);
+  scene.add(fill);
+
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.ShadowMaterial({ opacity:.16 }));
+  ground.rotation.x = -Math.PI / 2;
+  ground.receiveShadow = true;
+  scene.add(ground);
+
+  const resize = () => {
+    const w = view.clientWidth, h = view.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  };
+  new ResizeObserver(resize).observe(view);
+  resize();
+
+  const clock = new THREE.Clock();
+  (function loop(){
+    requestAnimationFrame(loop);
+    const dt = clock.getDelta();
+    if (tween) {
+      tween.t = Math.min(1, tween.t + dt * 2.2);
+      const e = 1 - Math.pow(1 - tween.t, 3);
+      const dir = tween.from.clone().lerp(tween.to, e).normalize();
+      camera.position.copy(controls.target).addScaledVector(dir, tween.dist);
+      if (tween.t >= 1) tween = null;
+    }
+    controls.update();
+    renderer.render(scene, camera);
+  })();
+}
+
+const srgb = hex => new THREE.Color(hex).convertSRGBToLinear();
+
+function drawFit(g, img, cw, ch, fit){
+  const iw = img.naturalWidth || img.width || 1024, ih = img.naturalHeight || img.height || 1024;
+  const ir = iw / ih, cr = cw / ch;
+  let w, h;
+  if (fit === 'stretch') { w = cw; h = ch; }
+  else if ((fit === 'cover') === (ir > cr)) { h = ch; w = ch * ir; }
+  else { w = cw; h = cw / ir; }
+  g.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+}
+
+// Tekstur satu bidang, proporsinya mengikuti ukuran bidang (cm)
+function faceTexture(wcm, hcm, img, b){
+  const max = 1024, r = wcm / hcm;
+  const cw = r >= 1 ? max : Math.max(16, Math.round(max * r));
+  const ch = r >= 1 ? Math.max(16, Math.round(max / r)) : max;
+  const c = document.createElement('canvas'); c.width = cw; c.height = ch;
+  const g = c.getContext('2d');
+  g.fillStyle = b.warna; g.fillRect(0, 0, cw, ch);
+  if (b.serat) {
+    for (let i = 0; i < cw * ch / 50; i++) {
+      g.fillStyle = Math.random() < .5 ? `rgba(90,60,30,${Math.random() * .09})` : `rgba(255,240,220,${Math.random() * .08})`;
+      g.fillRect(Math.random() * cw, Math.random() * ch, Math.random() * 4 + 1, 1);
+    }
+  }
+  if (img) {
+    // Tinta di atas kertas coklat terlihat "menyerap" (multiply)
+    if (b.serat) g.globalCompositeOperation = 'multiply';
+    drawFit(g, img, cw, ch, state.fit);
+    g.globalCompositeOperation = 'source-over';
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.encoding = THREE.sRGBEncoding;
+  t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  return t;
+}
+
+function dispose(o){
+  o.traverse(c => {
+    if (c.geometry) c.geometry.dispose();
+    if (c.material) (Array.isArray(c.material) ? c.material : [c.material]).forEach(m => { if (m.map) m.map.dispose(); m.dispose(); });
+  });
+}
+
+function makePerson(S){
+  // Siluet orang 165 cm sebagai pembanding ukuran
+  const grp = new THREE.Group();
+  const m = new THREE.MeshStandardMaterial({ color:srgb('#9a95a6'), roughness:.8 });
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(17 * S, 14 * S, 138 * S, 24), m);
+  body.position.y = 69 * S;
+  const head = new THREE.Mesh(new THREE.SphereGeometry(11 * S, 24, 16), m);
+  head.position.y = 153 * S;
+  [body, head].forEach(x => { x.castShadow = true; grp.add(x); });
+  return grp;
+}
+
+function makeA4(S){
+  const c = document.createElement('canvas'); c.width = 210; c.height = 297;
+  const g = c.getContext('2d');
+  g.fillStyle = '#ffffff'; g.fillRect(0, 0, 210, 297);
+  g.strokeStyle = '#d9d4c7'; g.lineWidth = 4; g.strokeRect(2, 2, 206, 293);
+  g.fillStyle = '#9a95a6'; g.font = 'bold 54px sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText('A4', 105, 148);
+  const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding;
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(21 * S, 29.7 * S), new THREE.MeshStandardMaterial({ map:t, roughness:.9 }));
+  mesh.rotation.x = -Math.PI / 2;
+  mesh.position.y = .002;
+  mesh.receiveShadow = true;
+  return mesh;
+}
+
+function build(refit, keepDir = true){
+  updateInfo();
+  if (!renderer) return;
+  if (product) { scene.remove(product); dispose(product); }
+  product = new THREE.Group();
+
+  if (state.mode === 'banner') {
+    const { p, l } = state.banner, b = getBahan('banner', state.banner.bahan);
+    const S = 3 / Math.max(p, l, state.ref ? 165 : 0);
+    const W = p * S, H = l * S, T = .012;
+    const side = new THREE.MeshStandardMaterial({ color:srgb(b.warna), roughness:b.rough });
+    const back = new THREE.MeshStandardMaterial({ color:srgb(b.warna).multiplyScalar(.9), roughness:b.rough });
+    const front = new THREE.MeshStandardMaterial({ map:faceTexture(p, l, state.bannerImg?.img, b), roughness:b.rough });
+    const mesh = new THREE.Mesh(new THREE.BoxGeometry(W, H, T), [side, side, side, side, front, back]);
+    mesh.castShadow = true;
+    mesh.position.y = H / 2;
+    product.add(mesh);
+
+    if (state.banner.grommet) {
+      const gm = new THREE.MeshStandardMaterial({ color:0xc9ccd1, metalness:.9, roughness:.3 });
+      const tube = .35 * S, geo = new THREE.TorusGeometry(1.1 * S, tube, 10, 24), inset = 3 * S;
+      const nx = Math.max(1, Math.round(p / 50)), ny = Math.max(1, Math.round(l / 50));
+      const pts = [];
+      for (let i = 0; i <= nx; i++) { const x = -W/2 + inset + (W - 2*inset) * i / nx; pts.push([x, H/2 - inset], [x, -H/2 + inset]); }
+      for (let j = 1; j < ny; j++) { const y = -H/2 + inset + (H - 2*inset) * j / ny; pts.push([-W/2 + inset, y], [W/2 - inset, y]); }
+      pts.forEach(([x, y]) => {
+        for (const z of [T/2 + tube * .3, -T/2 - tube * .3]) {
+          const g = new THREE.Mesh(geo, gm); g.position.set(x, y + H/2, z); product.add(g);
+        }
+      });
+    }
+    if (state.ref) { const person = makePerson(S); person.position.set(-W/2 - 35 * S, 0, .25); product.add(person); }
+  } else {
+    const { p, l, t } = state.box, b = getBahan('box', state.box.bahan);
+    const S = 3 / Math.max(p, l, t, state.ref ? 29.7 : 0);
+    const W = p * S, H = t * S, D = l * S;
+    const size = { kanan:[l,t], kiri:[l,t], atas:[p,l], bawah:[p,l], depan:[p,t], belakang:[p,t] };
+    const mats = FACES.map(([k]) => new THREE.MeshStandardMaterial({ map:faceTexture(...size[k], state.boxImgs[k]?.img, b), roughness:b.rough }));
+    const mesh = new THREE.Mesh(new THREE.BoxGeometry(W, H, D), mats);
+    mesh.castShadow = true;
+    mesh.position.y = H / 2;
+    const edges = new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry), new THREE.LineBasicMaterial({ color:0x000000, transparent:true, opacity:.14 }));
+    mesh.add(edges);
+    product.add(mesh);
+    if (state.ref) { const a4 = makeA4(S); a4.position.set(W/2 + 6 * S + 10.5 * S, 0, 0); product.add(a4); }
+  }
+
+  scene.add(product);
+  if (refit) fitCamera(keepDir);
+}
+
+function fitCamera(keepDir){
+  const box = new THREE.Box3().setFromObject(product);
+  const center = box.getCenter(new THREE.Vector3());
+  const r = box.getSize(new THREE.Vector3()).length() / 2;
+  let dist = r / Math.sin(THREE.MathUtils.degToRad(camera.fov / 2)) * 1.02;
+  if (camera.aspect < 1) dist /= Math.max(camera.aspect, .55);
+  const dir = keepDir && camera.position.lengthSq() > 0
+    ? camera.position.clone().sub(controls.target).normalize()
+    : new THREE.Vector3(...(state.mode === 'banner' ? [.3, .15, 1] : [1, .65, 1.5])).normalize();
+  tween = null;
+  controls.target.copy(center);
+  camera.position.copy(center).addScaledVector(dir, dist);
+  controls.update();
+}
+
+function lookAt(face){
+  if (!renderer) return;
+  const dirs = face === 'all' ? (state.mode === 'banner' ? [.3,.15,1] : [1,.65,1.5]) : FACE_DIR[face];
+  const from = camera.position.clone().sub(controls.target);
+  tween = { from:from.clone().normalize(), to:new THREE.Vector3(...dirs).normalize(), dist:from.length(), t:0 };
+  controls.autoRotate = false; $('#autoRot').checked = false;
+}
+
+let pending = false;
+function schedule(){
+  if (pending) return; pending = true;
+  requestAnimationFrame(() => { pending = false; build(true); });
+}
+
+/* ---------------- Panel ---------------- */
+const dimRows = [];
+function makeDim(el, obj, key, label, min, max){
+  const row = document.createElement('div'); row.className = 'dim';
+  row.innerHTML = `<label>${label}</label><input type="range" min="${min}" max="${max}" step="1" aria-label="${label}"><div class="num"><input type="number" min="${min}" max="${max}" step="1" inputmode="numeric" aria-label="${label} (cm)"><span>cm</span></div>`;
+  const [range, num] = row.querySelectorAll('input');
+  const sync = () => { range.value = num.value = obj[key]; };
+  const set = (v, fromNum) => {
+    v = Math.round(+v); if (!isFinite(v)) return;
+    const c = Math.min(max, Math.max(min, v));
+    obj[key] = c; range.value = c; if (!fromNum) num.value = c;
+    schedule();
+  };
+  range.addEventListener('input', () => set(range.value));
+  num.addEventListener('input', () => { if (num.value !== '') set(num.value, true); });
+  num.addEventListener('change', sync);
+  sync(); dimRows.push(sync);
+  el.appendChild(row);
+}
+makeDim($('#dimsBanner'), state.banner, 'p', 'Panjang', 20, 1000);
+makeDim($('#dimsBanner'), state.banner, 'l', 'Lebar', 20, 500);
+makeDim($('#dimsBox'), state.box, 'p', 'Panjang', 3, 100);
+makeDim($('#dimsBox'), state.box, 'l', 'Lebar', 3, 100);
+makeDim($('#dimsBox'), state.box, 't', 'Tinggi', 3, 100);
+
+$$('#ctlBanner .presets button, #ctlBox .presets button').forEach(btn => btn.addEventListener('click', () => {
+  const obj = state.mode === 'banner' ? state.banner : state.box;
+  obj.p = +btn.dataset.p; obj.l = +btn.dataset.l; if (btn.dataset.t) obj.t = +btn.dataset.t;
+  dimRows.forEach(f => f()); build(true);
+}));
+
+function showDesc(){
+  $('#descBanner').textContent = getBahan('banner', state.banner.bahan).desc;
+  $('#descBox').textContent = getBahan('box', state.box.bahan).desc;
+}
+$('#bahanBanner').addEventListener('change', e => { state.banner.bahan = e.target.value; showDesc(); build(false); });
+$('#bahanBox').addEventListener('change', e => { state.box.bahan = e.target.value; showDesc(); build(false); });
+$('#grommet').addEventListener('change', e => { state.banner.grommet = e.target.checked; build(false); });
+
+$$('.tabs button').forEach(btn => btn.addEventListener('click', () => {
+  state.mode = btn.dataset.mode;
+  $$('.tabs button').forEach(b => b.classList.toggle('on', b === btn));
+  $('#ctlBanner').hidden = state.mode !== 'banner';
+  $('#ctlBox').hidden = state.mode !== 'box';
+  $('#faces').hidden = state.mode !== 'box';
+  $('#refLabel').textContent = state.mode === 'banner' ? 'Pembanding orang 165 cm' : 'Pembanding kertas A4';
+  updateDropTitle(); renderList();
+  build(true, false);
+}));
+
+$$('#faces button').forEach(btn => btn.addEventListener('click', () => {
+  state.face = btn.dataset.face;
+  $$('#faces button').forEach(b => b.classList.toggle('on', b === btn));
+  updateDropTitle();
+  lookAt(state.face);
+}));
+
+$$('#fitSeg button').forEach(btn => btn.addEventListener('click', () => {
+  state.fit = btn.dataset.fit;
+  $$('#fitSeg button').forEach(b => b.classList.toggle('on', b === btn));
+  build(false);
+}));
+
+function updateDropTitle(){
+  const label = state.mode === 'banner' ? 'Unggah desain banner'
+    : state.face === 'all' ? 'Unggah desain untuk semua sisi'
+    : `Unggah desain sisi ${FACES.find(f => f[0] === state.face)[1].toLowerCase()}`;
+  $('#dropTitle').textContent = label;
+}
+
+function loadImage(file){
+  return new Promise((res, rej) => {
+    if (!file || !file.type.startsWith('image/')) return rej();
+    const img = new Image();
+    img.onload = () => res(img);
+    img.onerror = rej;
+    img.src = URL.createObjectURL(file);
+  });
+}
+
+async function handleFile(file){
+  try {
+    const img = await loadImage(file);
+    const d = { img, name:file.name };
+    if (state.mode === 'banner') state.bannerImg = d;
+    else (state.face === 'all' ? FACES.map(f => f[0]) : [state.face]).forEach(k => state.boxImgs[k] = d);
+    build(false); renderList();
+    toast('Desain diterapkan ke model 3D');
+  } catch (e) {
+    toast('File harus berupa gambar (PNG, JPG, WEBP, atau SVG)');
+  }
+}
+
+$('#file').addEventListener('change', e => { handleFile(e.target.files[0]); e.target.value = ''; });
+const drop = $('#drop');
+['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', e => handleFile(e.dataTransfer.files[0]));
+// Juga bisa drop langsung ke area 3D
+view.addEventListener('dragover', e => e.preventDefault());
+view.addEventListener('drop', e => { e.preventDefault(); handleFile(e.dataTransfer.files[0]); });
+
+function renderList(){
+  const ul = $('#dlist'); ul.innerHTML = '';
+  const add = (label, name, onDel) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span><b>${label}:</b> </span><button type="button">Hapus</button>`;
+    li.querySelector('span').append(name);
+    li.querySelector('button').onclick = onDel;
+    ul.appendChild(li);
+  };
+  if (state.mode === 'banner') {
+    if (state.bannerImg) add('Depan', state.bannerImg.name, () => { state.bannerImg = null; build(false); renderList(); });
+  } else {
+    FACES.forEach(([k, label]) => {
+      if (state.boxImgs[k]) add(label, state.boxImgs[k].name, () => { delete state.boxImgs[k]; build(false); renderList(); });
+    });
+  }
+  $$('#faces button').forEach(b => {
+    const f = b.dataset.face;
+    b.classList.toggle('has', f === 'all' ? FACES.every(([k]) => state.boxImgs[k]) : !!state.boxImgs[f]);
+  });
+}
+
+function updateInfo(){
+  const el = $('#sizeInfo');
+  if (state.mode === 'banner') {
+    const { p, l, bahan } = state.banner;
+    el.innerHTML = `${p} × ${l} cm<small>${getBahan('banner', bahan).nama} · luas ${fmt(p * l / 10000)} m²</small>`;
+  } else {
+    const { p, l, t, bahan } = state.box;
+    el.innerHTML = `${p} × ${l} × ${t} cm<small>${getBahan('box', bahan).nama} · P × L × T</small>`;
+  }
+}
+
+$('#autoRot').addEventListener('change', e => { if (controls) controls.autoRotate = e.target.checked; });
+$('#refToggle').addEventListener('change', e => { state.ref = e.target.checked; build(true); });
+$('#resetView').addEventListener('click', () => { if (renderer) { build(true, false); } });
+
+$('#shotBtn').addEventListener('click', () => {
+  if (!renderer) return toast('Pratinjau 3D tidak tersedia');
+  renderer.render(scene, camera);
+  const a = document.createElement('a');
+  const s = state.mode === 'banner' ? `banner-${state.banner.p}x${state.banner.l}` : `packaging-${state.box.p}x${state.box.l}x${state.box.t}`;
+  a.download = `pratinjau-${s}.png`;
+  a.href = renderer.domElement.toDataURL('image/png');
+  a.click();
+});
+
+$('#orderBtn').addEventListener('click', () => {
+  let lines;
+  if (state.mode === 'banner') {
+    const { p, l, bahan, grommet } = state.banner;
+    lines = [
+      'Halo, saya ingin memesan cetak *Banner*:',
+      `• Ukuran: ${p} × ${l} cm (${fmt(p * l / 10000)} m²)`,
+      `• Bahan: ${getBahan('banner', bahan).nama}`,
+      `• Finishing: ${grommet ? 'Mata ayam' : 'Tanpa mata ayam'}`,
+      `• Desain: ${state.bannerImg ? state.bannerImg.name + ' (file saya kirim di chat ini)' : 'belum ada / minta dibantu'}`
+    ];
+  } else {
+    const { p, l, t, bahan } = state.box;
+    const sides = FACES.filter(([k]) => state.boxImgs[k]).map(([, n]) => n);
+    lines = [
+      'Halo, saya ingin memesan cetak *Packaging/Box*:',
+      `• Ukuran: P ${p} × L ${l} × T ${t} cm`,
+      `• Bahan: ${getBahan('box', bahan).nama}`,
+      `• Sisi bercetak: ${sides.length ? sides.join(', ') : 'belum ada desain / minta dibantu'}`
+    ];
+  }
+  lines.push('• Jumlah: ', '• Alamat pengiriman (Kota Bogor): ');
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
+});
+
+showDesc(); updateDropTitle(); renderList();
+build(true, false);
+</script>
+</body>
+</html>
